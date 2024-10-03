@@ -1,0 +1,10 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity mux_4to1 is
+    port(
+        sel   : in  std_logic_vector(1 downto 0);  -- 2-bit selection input
+        d_in  : in  std_logic_vector(3 downto 0);  -- 4 input data lines
+        d_out : out std_logic                        -- Output
+    );
+end mux_4to1;

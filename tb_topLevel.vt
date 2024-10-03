@@ -1,0 +1,67 @@
+`timescale 1 ps/ 1 ps
+module topLevel_vlg_tst();
+
+// constants                                           
+parameter CLOCK_PERIOD = 20; // Define clock period in ps
+
+// general purpose registers
+reg eachvec;
+
+// test vector input registers
+reg GClock;
+reg GReset;
+reg LeftInput;
+reg RightInput;
+
+// wires                                               
+wire [7:0] DisplayOut;
+
+// Instantiate the topLevel module
+topLevel i1 (
+    .DisplayOut(DisplayOut),
+    .GClock(GClock),
+    .GReset(GReset),
+    .LeftInput(LeftInput),
+    .RightInput(RightInput)
+);
+
+// Clock generation
+always begin
+    GClock = 1'b0;
+    #(CLOCK_PERIOD / 2);
+    GClock = 1'b1;
+    #(CLOCK_PERIOD / 2);
+end
+
+// Initial block for testbench
+initial begin
+    // Initialize signals
+    GReset = 1'b0;
+    LeftInput = 1'b0;
+    RightInput = 1'b0;
+    
+    // Apply Reset
+    $display("Applying Reset");
+    GReset = 1'b1;
+    #(2 * CLOCK_PERIOD);
+    GReset = 1'b0;
+    $display("Reset Released");
+    
+    // Test sequence: Turn left switch on
+    $display("Turning Left switch on");
+    LeftInput = 1'b1;
+    #(5 * CLOCK_PERIOD);
+    LeftInput = 1'b0;
+    
+    // Test sequence: Turn right switch on
+    $display("Turning Right switch on");
+    RightInput = 1'b1;
+    #(5 * CLOCK_PERIOD);
+    RightInput = 1'b0;
+    
+    // End simulation after some time
+    #(10 * CLOCK_PERIOD);
+    $finish;
+end
+
+endmodule

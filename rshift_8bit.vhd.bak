@@ -1,0 +1,22 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY rshift_8bit IS
+    PORT(
+        data_in : IN STD_LOGIC_VECTOR(7 downto 0);  -- 8-bit input data
+        data_out : OUT STD_LOGIC_VECTOR(7 downto 0)  -- 8-bit output data
+    );
+END rshift_8bit;
+
+ARCHITECTURE structural OF rshift_8bit IS
+BEGIN
+    -- Perform right shift operation
+    data_out(0) <= '0';                    -- The least significant bit (LSB) is filled with '0'
+    data_out(1) <= data_in(0);             -- Bit 0 shifts to Bit 1
+    data_out(2) <= data_in(1);             -- Bit 1 shifts to Bit 2
+    data_out(3) <= data_in(2);             -- Bit 2 shifts to Bit 3
+    data_out(4) <= data_in(3);             -- Bit 3 shifts to Bit 4
+    data_out(5) <= data_in(4);             -- Bit 4 shifts to Bit 5
+    data_out(6) <= data_in(5);             -- Bit 5 shifts to Bit 6
+    data_out(7) <= data_in(6);             -- Bit 6 shifts to Bit 7
+END structural;

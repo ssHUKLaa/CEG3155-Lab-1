@@ -1,0 +1,3029 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 64-Bit"
+// VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
+
+// DATE "10/01/2024 23:37:41"
+
+// 
+// Device: Altera EP4CE115F29C8 Package FBGA780
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module topLevel (
+	RightInput,
+	LeftInput,
+	GClock,
+	GReset,
+	DisplayOut);
+input 	RightInput;
+input 	LeftInput;
+input 	GClock;
+input 	GReset;
+output 	[7:0] DisplayOut;
+
+// Design Ports Information
+// DisplayOut[0]	=>  Location: PIN_R3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// DisplayOut[1]	=>  Location: PIN_R5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// DisplayOut[2]	=>  Location: PIN_R6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// DisplayOut[3]	=>  Location: PIN_T3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// DisplayOut[4]	=>  Location: PIN_R1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// DisplayOut[5]	=>  Location: PIN_U3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// DisplayOut[6]	=>  Location: PIN_T4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// DisplayOut[7]	=>  Location: PIN_R4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// GClock	=>  Location: PIN_J1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LeftInput	=>  Location: PIN_R7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// GReset	=>  Location: PIN_U4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// RightInput	=>  Location: PIN_R2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \DisplayOut[0]~output_o ;
+wire \DisplayOut[1]~output_o ;
+wire \DisplayOut[2]~output_o ;
+wire \DisplayOut[3]~output_o ;
+wire \DisplayOut[4]~output_o ;
+wire \DisplayOut[5]~output_o ;
+wire \DisplayOut[6]~output_o ;
+wire \DisplayOut[7]~output_o ;
+wire \GClock~input_o ;
+wire \LeftInput~input_o ;
+wire \GReset~input_o ;
+wire \GClock~inputclkctrl_outclk ;
+wire \datapath_inst|rightRegister|dff_inst|masterLatch|int_q~0_combout ;
+wire \datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0_combout ;
+wire \RightInput~input_o ;
+wire \datapath_inst|leftRegister|dff_inst|masterLatch|int_q~0_combout ;
+wire \datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0_combout ;
+wire \controlLogic_inst|dff_inst2|masterLatch|int_q~0_combout ;
+wire \controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ;
+wire \controlLogic_inst|dff_inst3|masterLatch|int_q~0_combout ;
+wire \controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ;
+wire \controlLogic_inst|dff_inst1|masterLatch|int_q~0_combout ;
+wire \controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ;
+wire \controlLogic_inst|dff_inst4|masterLatch|int_q~0_combout ;
+wire \controlLogic_inst|dff_inst4|slaveLatch|int_q~0_combout ;
+wire \controlLogic_inst|dff_inst0|slaveLatch|int_q~0_combout ;
+wire \controlLogic_inst|loadL~combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst0|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst0|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~1_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst7|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst6|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst6|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst5|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst5|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst4|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst4|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst3|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst3|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst2|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst2|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst1|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_RMASK|dff_inst1|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0_combout ;
+wire \datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst0|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst0|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst1|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst1|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst2|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst2|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst3|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst3|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst4|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst4|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst5|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst5|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst6|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst6|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst7|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_LMASK|dff_inst7|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0_combout ;
+wire \datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~3_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~5_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~6_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst0|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~1_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~2_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst1|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~1_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~2_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst2|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~1_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~2_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst3|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~1_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~2_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst4|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~1_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~2_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst5|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~1_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~2_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst6|slaveLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~0_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~1_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~2_combout ;
+wire \datapath_inst|register_8bit_Disp|dff_inst7|slaveLatch|int_q~0_combout ;
+wire [7:0] \datapath_inst|mux_2to1_RReg|temp_out ;
+wire [7:0] \datapath_inst|mux_2to1_RReg|and2 ;
+wire [7:0] \datapath_inst|mux_2to1_RReg|d_out ;
+wire [7:0] \datapath_inst|mux_2to1_LReg|temp_out ;
+wire [7:0] \datapath_inst|mux_2to1_LReg|d_out ;
+wire [7:0] \datapath_inst|mux_2to1_LReg|and2 ;
+
+
+// Location: IOOBUF_X0_Y34_N23
+cycloneive_io_obuf \DisplayOut[0]~output (
+	.i(!\datapath_inst|register_8bit_Disp|dff_inst0|slaveLatch|int_q~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\DisplayOut[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \DisplayOut[0]~output .bus_hold = "false";
+defparam \DisplayOut[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y32_N23
+cycloneive_io_obuf \DisplayOut[1]~output (
+	.i(!\datapath_inst|register_8bit_Disp|dff_inst1|slaveLatch|int_q~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\DisplayOut[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \DisplayOut[1]~output .bus_hold = "false";
+defparam \DisplayOut[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y34_N2
+cycloneive_io_obuf \DisplayOut[2]~output (
+	.i(!\datapath_inst|register_8bit_Disp|dff_inst2|slaveLatch|int_q~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\DisplayOut[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \DisplayOut[2]~output .bus_hold = "false";
+defparam \DisplayOut[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y32_N16
+cycloneive_io_obuf \DisplayOut[3]~output (
+	.i(!\datapath_inst|register_8bit_Disp|dff_inst3|slaveLatch|int_q~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\DisplayOut[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \DisplayOut[3]~output .bus_hold = "false";
+defparam \DisplayOut[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y35_N9
+cycloneive_io_obuf \DisplayOut[4]~output (
+	.i(!\datapath_inst|register_8bit_Disp|dff_inst4|slaveLatch|int_q~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\DisplayOut[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \DisplayOut[4]~output .bus_hold = "false";
+defparam \DisplayOut[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y34_N9
+cycloneive_io_obuf \DisplayOut[5]~output (
+	.i(!\datapath_inst|register_8bit_Disp|dff_inst5|slaveLatch|int_q~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\DisplayOut[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \DisplayOut[5]~output .bus_hold = "false";
+defparam \DisplayOut[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y33_N23
+cycloneive_io_obuf \DisplayOut[6]~output (
+	.i(!\datapath_inst|register_8bit_Disp|dff_inst6|slaveLatch|int_q~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\DisplayOut[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \DisplayOut[6]~output .bus_hold = "false";
+defparam \DisplayOut[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y33_N16
+cycloneive_io_obuf \DisplayOut[7]~output (
+	.i(!\datapath_inst|register_8bit_Disp|dff_inst7|slaveLatch|int_q~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\DisplayOut[7]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \DisplayOut[7]~output .bus_hold = "false";
+defparam \DisplayOut[7]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y36_N8
+cycloneive_io_ibuf \GClock~input (
+	.i(GClock),
+	.ibar(gnd),
+	.o(\GClock~input_o ));
+// synopsys translate_off
+defparam \GClock~input .bus_hold = "false";
+defparam \GClock~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y35_N15
+cycloneive_io_ibuf \LeftInput~input (
+	.i(LeftInput),
+	.ibar(gnd),
+	.o(\LeftInput~input_o ));
+// synopsys translate_off
+defparam \LeftInput~input .bus_hold = "false";
+defparam \LeftInput~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y34_N15
+cycloneive_io_ibuf \GReset~input (
+	.i(GReset),
+	.ibar(gnd),
+	.o(\GReset~input_o ));
+// synopsys translate_off
+defparam \GReset~input .bus_hold = "false";
+defparam \GReset~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G2
+cycloneive_clkctrl \GClock~inputclkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\GClock~input_o }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\GClock~inputclkctrl_outclk ));
+// synopsys translate_off
+defparam \GClock~inputclkctrl .clock_type = "global clock";
+defparam \GClock~inputclkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N12
+cycloneive_lcell_comb \datapath_inst|rightRegister|dff_inst|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rightRegister|dff_inst|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (((\datapath_inst|rightRegister|dff_inst|masterLatch|int_q~0_combout )))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & (((\GReset~input_o )) # 
+// (!\LeftInput~input_o )))
+
+	.dataa(\LeftInput~input_o ),
+	.datab(\datapath_inst|rightRegister|dff_inst|masterLatch|int_q~0_combout ),
+	.datac(\GReset~input_o ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rightRegister|dff_inst|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rightRegister|dff_inst|masterLatch|int_q~0 .lut_mask = 16'hCCF5;
+defparam \datapath_inst|rightRegister|dff_inst|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N10
+cycloneive_lcell_comb \datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|rightRegister|dff_inst|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|rightRegister|dff_inst|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0 .lut_mask = 16'hF0AA;
+defparam \datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y35_N1
+cycloneive_io_ibuf \RightInput~input (
+	.i(RightInput),
+	.ibar(gnd),
+	.o(\RightInput~input_o ));
+// synopsys translate_off
+defparam \RightInput~input .bus_hold = "false";
+defparam \RightInput~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N10
+cycloneive_lcell_comb \datapath_inst|leftRegister|dff_inst|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|leftRegister|dff_inst|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|leftRegister|dff_inst|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & (((\GReset~input_o ) # 
+// (!\RightInput~input_o ))))
+
+	.dataa(\datapath_inst|leftRegister|dff_inst|masterLatch|int_q~0_combout ),
+	.datab(\GReset~input_o ),
+	.datac(\RightInput~input_o ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|leftRegister|dff_inst|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|leftRegister|dff_inst|masterLatch|int_q~0 .lut_mask = 16'hAACF;
+defparam \datapath_inst|leftRegister|dff_inst|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N24
+cycloneive_lcell_comb \datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|leftRegister|dff_inst|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// ((\datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|leftRegister|dff_inst|masterLatch|int_q~0_combout ),
+	.datab(\datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0_combout ),
+	.datac(gnd),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0 .lut_mask = 16'hAACC;
+defparam \datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N8
+cycloneive_lcell_comb \controlLogic_inst|dff_inst2|masterLatch|int_q~0 (
+// Equation(s):
+// \controlLogic_inst|dff_inst2|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (((\controlLogic_inst|dff_inst2|masterLatch|int_q~0_combout )))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (((\datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0_combout )) # (!\datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0_combout ),
+	.datab(\controlLogic_inst|dff_inst2|masterLatch|int_q~0_combout ),
+	.datac(\datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\controlLogic_inst|dff_inst2|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \controlLogic_inst|dff_inst2|masterLatch|int_q~0 .lut_mask = 16'hCCF5;
+defparam \controlLogic_inst|dff_inst2|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N20
+cycloneive_lcell_comb \controlLogic_inst|dff_inst2|slaveLatch|int_q~0 (
+// Equation(s):
+// \controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\controlLogic_inst|dff_inst2|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// ((\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\controlLogic_inst|dff_inst2|masterLatch|int_q~0_combout ),
+	.datac(\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \controlLogic_inst|dff_inst2|slaveLatch|int_q~0 .lut_mask = 16'hCCF0;
+defparam \controlLogic_inst|dff_inst2|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N28
+cycloneive_lcell_comb \controlLogic_inst|dff_inst3|masterLatch|int_q~0 (
+// Equation(s):
+// \controlLogic_inst|dff_inst3|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\controlLogic_inst|dff_inst3|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (((\datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0_combout ) # (!\datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0_combout ))))
+
+	.dataa(\controlLogic_inst|dff_inst3|masterLatch|int_q~0_combout ),
+	.datab(\datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\controlLogic_inst|dff_inst3|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \controlLogic_inst|dff_inst3|masterLatch|int_q~0 .lut_mask = 16'hAAF3;
+defparam \controlLogic_inst|dff_inst3|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N0
+cycloneive_lcell_comb \controlLogic_inst|dff_inst3|slaveLatch|int_q~0 (
+// Equation(s):
+// \controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\controlLogic_inst|dff_inst3|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// ((\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\controlLogic_inst|dff_inst3|masterLatch|int_q~0_combout ),
+	.datac(\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \controlLogic_inst|dff_inst3|slaveLatch|int_q~0 .lut_mask = 16'hCCF0;
+defparam \controlLogic_inst|dff_inst3|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N22
+cycloneive_lcell_comb \controlLogic_inst|dff_inst1|masterLatch|int_q~0 (
+// Equation(s):
+// \controlLogic_inst|dff_inst1|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\controlLogic_inst|dff_inst1|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (((\datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0_combout ) # (\datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0_combout ))))
+
+	.dataa(\controlLogic_inst|dff_inst1|masterLatch|int_q~0_combout ),
+	.datab(\datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\controlLogic_inst|dff_inst1|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \controlLogic_inst|dff_inst1|masterLatch|int_q~0 .lut_mask = 16'hAAFC;
+defparam \controlLogic_inst|dff_inst1|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N30
+cycloneive_lcell_comb \controlLogic_inst|dff_inst1|slaveLatch|int_q~0 (
+// Equation(s):
+// \controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\controlLogic_inst|dff_inst1|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ))
+
+	.dataa(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\controlLogic_inst|dff_inst1|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \controlLogic_inst|dff_inst1|slaveLatch|int_q~0 .lut_mask = 16'hF0AA;
+defparam \controlLogic_inst|dff_inst1|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N16
+cycloneive_lcell_comb \controlLogic_inst|dff_inst4|masterLatch|int_q~0 (
+// Equation(s):
+// \controlLogic_inst|dff_inst4|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\controlLogic_inst|dff_inst4|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (((!\datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0_combout ) # (!\datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0_combout ))))
+
+	.dataa(\controlLogic_inst|dff_inst4|masterLatch|int_q~0_combout ),
+	.datab(\datapath_inst|rightRegister|dff_inst|slaveLatch|int_q~0_combout ),
+	.datac(\GClock~inputclkctrl_outclk ),
+	.datad(\datapath_inst|leftRegister|dff_inst|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\controlLogic_inst|dff_inst4|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \controlLogic_inst|dff_inst4|masterLatch|int_q~0 .lut_mask = 16'hA3AF;
+defparam \controlLogic_inst|dff_inst4|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N26
+cycloneive_lcell_comb \controlLogic_inst|dff_inst4|slaveLatch|int_q~0 (
+// Equation(s):
+// \controlLogic_inst|dff_inst4|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\controlLogic_inst|dff_inst4|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\controlLogic_inst|dff_inst4|slaveLatch|int_q~0_combout ))
+
+	.dataa(\controlLogic_inst|dff_inst4|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\controlLogic_inst|dff_inst4|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\controlLogic_inst|dff_inst4|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \controlLogic_inst|dff_inst4|slaveLatch|int_q~0 .lut_mask = 16'hF0AA;
+defparam \controlLogic_inst|dff_inst4|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N2
+cycloneive_lcell_comb \controlLogic_inst|dff_inst0|slaveLatch|int_q~0 (
+// Equation(s):
+// \controlLogic_inst|dff_inst0|slaveLatch|int_q~0_combout  = (\controlLogic_inst|dff_inst0|slaveLatch|int_q~0_combout  & !\GClock~input_o )
+
+	.dataa(\controlLogic_inst|dff_inst0|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\GClock~input_o ),
+	.cin(gnd),
+	.combout(\controlLogic_inst|dff_inst0|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \controlLogic_inst|dff_inst0|slaveLatch|int_q~0 .lut_mask = 16'h00AA;
+defparam \controlLogic_inst|dff_inst0|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N24
+cycloneive_lcell_comb \controlLogic_inst|loadL (
+// Equation(s):
+// \controlLogic_inst|loadL~combout  = ((!\controlLogic_inst|dff_inst0|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout )) # (!\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout )
+
+	.dataa(\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datab(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datac(gnd),
+	.datad(\controlLogic_inst|dff_inst0|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\controlLogic_inst|loadL~combout ),
+	.cout());
+// synopsys translate_off
+defparam \controlLogic_inst|loadL .lut_mask = 16'h77FF;
+defparam \controlLogic_inst|loadL .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N18
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~0_combout  = (!\GClock~input_o  & (((\controlLogic_inst|loadL~combout ) # (!\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout )) # 
+// (!\controlLogic_inst|dff_inst4|slaveLatch|int_q~0_combout )))
+
+	.dataa(\controlLogic_inst|dff_inst4|slaveLatch|int_q~0_combout ),
+	.datab(\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datac(\GClock~input_o ),
+	.datad(\controlLogic_inst|loadL~combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~0 .lut_mask = 16'h0F07;
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N10
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout  = (!\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout  & (\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout  & (\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout  & 
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~0_combout )))
+
+	.dataa(\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datab(\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datac(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2 .lut_mask = 16'h4000;
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N0
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout  = (!\GClock~input_o  & (((!\controlLogic_inst|dff_inst0|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout )) # 
+// (!\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout )))
+
+	.dataa(\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datab(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datac(\GClock~input_o ),
+	.datad(\controlLogic_inst|dff_inst0|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0 .lut_mask = 16'h070F;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N2
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst0|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst0|masterLatch|int_q~0_combout  = (\GClock~input_o  & (\datapath_inst|register_8bit_RMASK|dff_inst0|masterLatch|int_q~0_combout  & ((!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ) # 
+// (!\datapath_inst|mux_2to1_RReg|d_out [0])))) # (!\GClock~input_o  & (((!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ) # (!\datapath_inst|mux_2to1_RReg|d_out [0]))))
+
+	.dataa(\GClock~input_o ),
+	.datab(\datapath_inst|register_8bit_RMASK|dff_inst0|masterLatch|int_q~0_combout ),
+	.datac(\datapath_inst|mux_2to1_RReg|d_out [0]),
+	.datad(\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst0|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst0|masterLatch|int_q~0 .lut_mask = 16'h0DDD;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst0|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N6
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst0|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst0|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_RMASK|dff_inst0|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_RMASK|dff_inst0|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|register_8bit_RMASK|dff_inst0|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\GClock~inputclkctrl_outclk ),
+	.datad(\datapath_inst|register_8bit_RMASK|dff_inst0|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst0|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst0|slaveLatch|int_q~0 .lut_mask = 16'hFA0A;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst0|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y35_N26
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// ((\datapath_inst|register_8bit_RMASK|dff_inst0|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|register_8bit_RMASK|dff_inst0|slaveLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0 .lut_mask = 16'hAAF0;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y35_N16
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N30
+cycloneive_lcell_comb \datapath_inst|mux_2to1_RReg|and2[7] (
+// Equation(s):
+// \datapath_inst|mux_2to1_RReg|and2 [7] = (!\datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0_combout  & ((!\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout )))
+
+	.dataa(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_RReg|and2 [7]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|and2[7] .lut_mask = 16'h005F;
+defparam \datapath_inst|mux_2to1_RReg|and2[7] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X4_Y36_N31
+dffeas \datapath_inst|mux_2to1_RReg|d_out[7] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(\datapath_inst|mux_2to1_RReg|and2 [7]),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_RReg|d_out [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|d_out[7] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_RReg|d_out[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N24
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~1 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~1_combout  = (\GClock~input_o  & (\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~1_combout  & ((!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ) # 
+// (!\datapath_inst|mux_2to1_RReg|d_out [7])))) # (!\GClock~input_o  & (((!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ) # (!\datapath_inst|mux_2to1_RReg|d_out [7]))))
+
+	.dataa(\GClock~input_o ),
+	.datab(\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~1_combout ),
+	.datac(\datapath_inst|mux_2to1_RReg|d_out [7]),
+	.datad(\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~1 .lut_mask = 16'h0DDD;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N8
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst7|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst7|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~1_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_RMASK|dff_inst7|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_RMASK|dff_inst7|slaveLatch|int_q~0_combout ),
+	.datac(\GClock~inputclkctrl_outclk ),
+	.datad(\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~1_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst7|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst7|slaveLatch|int_q~0 .lut_mask = 16'hFC0C;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst7|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y35_N26
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// ((\datapath_inst|register_8bit_RMASK|dff_inst7|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|register_8bit_RMASK|dff_inst7|slaveLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0 .lut_mask = 16'hAAF0;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y35_N4
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N26
+cycloneive_lcell_comb \datapath_inst|mux_2to1_RReg|and2[6] (
+// Equation(s):
+// \datapath_inst|mux_2to1_RReg|and2 [6] = (!\datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0_combout  & ((!\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datac(\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_RReg|and2 [6]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|and2[6] .lut_mask = 16'h003F;
+defparam \datapath_inst|mux_2to1_RReg|and2[6] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X3_Y36_N27
+dffeas \datapath_inst|mux_2to1_RReg|d_out[6] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(\datapath_inst|mux_2to1_RReg|and2 [6]),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_RReg|d_out [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|d_out[6] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_RReg|d_out[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N22
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst6|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst6|masterLatch|int_q~0_combout  = (\datapath_inst|register_8bit_RMASK|dff_inst6|masterLatch|int_q~0_combout  & (((!\datapath_inst|mux_2to1_RReg|d_out [6])) # 
+// (!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ))) # (!\datapath_inst|register_8bit_RMASK|dff_inst6|masterLatch|int_q~0_combout  & (!\GClock~input_o  & ((!\datapath_inst|mux_2to1_RReg|d_out [6]) # 
+// (!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ))))
+
+	.dataa(\datapath_inst|register_8bit_RMASK|dff_inst6|masterLatch|int_q~0_combout ),
+	.datab(\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ),
+	.datac(\GClock~input_o ),
+	.datad(\datapath_inst|mux_2to1_RReg|d_out [6]),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst6|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst6|masterLatch|int_q~0 .lut_mask = 16'h23AF;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst6|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N30
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst6|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst6|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_RMASK|dff_inst6|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_RMASK|dff_inst6|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|register_8bit_RMASK|dff_inst6|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|register_8bit_RMASK|dff_inst6|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst6|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst6|slaveLatch|int_q~0 .lut_mask = 16'hF0AA;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst6|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y35_N4
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_RMASK|dff_inst6|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_RMASK|dff_inst6|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y35_N22
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0 .lut_mask = 16'hF0AA;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N30
+cycloneive_lcell_comb \datapath_inst|mux_2to1_RReg|and2[5] (
+// Equation(s):
+// \datapath_inst|mux_2to1_RReg|and2 [5] = (!\datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0_combout  & ((!\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datac(\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_RReg|and2 [5]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|and2[5] .lut_mask = 16'h003F;
+defparam \datapath_inst|mux_2to1_RReg|and2[5] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X3_Y36_N31
+dffeas \datapath_inst|mux_2to1_RReg|d_out[5] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(\datapath_inst|mux_2to1_RReg|and2 [5]),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_RReg|d_out [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|d_out[5] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_RReg|d_out[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N12
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst5|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst5|masterLatch|int_q~0_combout  = (\GClock~input_o  & (\datapath_inst|register_8bit_RMASK|dff_inst5|masterLatch|int_q~0_combout  & ((!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ) # 
+// (!\datapath_inst|mux_2to1_RReg|d_out [5])))) # (!\GClock~input_o  & (((!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ) # (!\datapath_inst|mux_2to1_RReg|d_out [5]))))
+
+	.dataa(\GClock~input_o ),
+	.datab(\datapath_inst|register_8bit_RMASK|dff_inst5|masterLatch|int_q~0_combout ),
+	.datac(\datapath_inst|mux_2to1_RReg|d_out [5]),
+	.datad(\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst5|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst5|masterLatch|int_q~0 .lut_mask = 16'h0DDD;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst5|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N4
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst5|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst5|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_RMASK|dff_inst5|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_RMASK|dff_inst5|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_RMASK|dff_inst5|slaveLatch|int_q~0_combout ),
+	.datac(\GClock~inputclkctrl_outclk ),
+	.datad(\datapath_inst|register_8bit_RMASK|dff_inst5|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst5|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst5|slaveLatch|int_q~0 .lut_mask = 16'hFC0C;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst5|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y35_N30
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// ((\datapath_inst|register_8bit_RMASK|dff_inst5|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|register_8bit_RMASK|dff_inst5|slaveLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0 .lut_mask = 16'hAAF0;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N26
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0 .lut_mask = 16'hF0AA;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N10
+cycloneive_lcell_comb \datapath_inst|mux_2to1_RReg|and2[4] (
+// Equation(s):
+// \datapath_inst|mux_2to1_RReg|and2 [4] = (!\datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0_combout  & ((!\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datad(\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_RReg|and2 [4]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|and2[4] .lut_mask = 16'h0555;
+defparam \datapath_inst|mux_2to1_RReg|and2[4] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y36_N21
+dffeas \datapath_inst|mux_2to1_RReg|d_out[4] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\datapath_inst|mux_2to1_RReg|and2 [4]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_RReg|d_out [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|d_out[4] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_RReg|d_out[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N18
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst4|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst4|masterLatch|int_q~0_combout  = (\GClock~input_o  & (\datapath_inst|register_8bit_RMASK|dff_inst4|masterLatch|int_q~0_combout  & ((!\datapath_inst|mux_2to1_RReg|d_out [4]) # 
+// (!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout )))) # (!\GClock~input_o  & (((!\datapath_inst|mux_2to1_RReg|d_out [4]) # (!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ))))
+
+	.dataa(\GClock~input_o ),
+	.datab(\datapath_inst|register_8bit_RMASK|dff_inst4|masterLatch|int_q~0_combout ),
+	.datac(\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ),
+	.datad(\datapath_inst|mux_2to1_RReg|d_out [4]),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst4|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst4|masterLatch|int_q~0 .lut_mask = 16'h0DDD;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst4|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N6
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst4|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst4|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_RMASK|dff_inst4|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_RMASK|dff_inst4|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|register_8bit_RMASK|dff_inst4|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\GClock~inputclkctrl_outclk ),
+	.datad(\datapath_inst|register_8bit_RMASK|dff_inst4|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst4|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst4|slaveLatch|int_q~0 .lut_mask = 16'hFA0A;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst4|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N30
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_RMASK|dff_inst4|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|register_8bit_RMASK|dff_inst4|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0 .lut_mask = 16'hF0AA;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N22
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0 .lut_mask = 16'hF0AA;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N2
+cycloneive_lcell_comb \datapath_inst|mux_2to1_RReg|and2[3] (
+// Equation(s):
+// \datapath_inst|mux_2to1_RReg|and2 [3] = (!\datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0_combout  & ((!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datad(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_RReg|and2 [3]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|and2[3] .lut_mask = 16'h030F;
+defparam \datapath_inst|mux_2to1_RReg|and2[3] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y36_N1
+dffeas \datapath_inst|mux_2to1_RReg|d_out[3] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\datapath_inst|mux_2to1_RReg|and2 [3]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_RReg|d_out [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|d_out[3] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_RReg|d_out[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N6
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst3|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst3|masterLatch|int_q~0_combout  = (\datapath_inst|register_8bit_RMASK|dff_inst3|masterLatch|int_q~0_combout  & (((!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ) # 
+// (!\datapath_inst|mux_2to1_RReg|d_out [3])))) # (!\datapath_inst|register_8bit_RMASK|dff_inst3|masterLatch|int_q~0_combout  & (!\GClock~input_o  & ((!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ) # 
+// (!\datapath_inst|mux_2to1_RReg|d_out [3]))))
+
+	.dataa(\datapath_inst|register_8bit_RMASK|dff_inst3|masterLatch|int_q~0_combout ),
+	.datab(\GClock~input_o ),
+	.datac(\datapath_inst|mux_2to1_RReg|d_out [3]),
+	.datad(\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst3|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst3|masterLatch|int_q~0 .lut_mask = 16'h0BBB;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst3|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N22
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst3|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst3|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_RMASK|dff_inst3|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_RMASK|dff_inst3|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|register_8bit_RMASK|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\GClock~inputclkctrl_outclk ),
+	.datad(\datapath_inst|register_8bit_RMASK|dff_inst3|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst3|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst3|slaveLatch|int_q~0 .lut_mask = 16'hFA0A;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst3|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N22
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// ((\datapath_inst|register_8bit_RMASK|dff_inst3|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|register_8bit_RMASK|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0 .lut_mask = 16'hAAF0;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N28
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N12
+cycloneive_lcell_comb \datapath_inst|mux_2to1_RReg|and2[2] (
+// Equation(s):
+// \datapath_inst|mux_2to1_RReg|and2 [2] = (!\datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0_combout  & ((!\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout )))
+
+	.dataa(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_RReg|and2 [2]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|and2[2] .lut_mask = 16'h005F;
+defparam \datapath_inst|mux_2to1_RReg|and2[2] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y36_N7
+dffeas \datapath_inst|mux_2to1_RReg|d_out[2] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\datapath_inst|mux_2to1_RReg|and2 [2]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_RReg|d_out [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|d_out[2] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_RReg|d_out[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N26
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst2|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst2|masterLatch|int_q~0_combout  = (\datapath_inst|register_8bit_RMASK|dff_inst2|masterLatch|int_q~0_combout  & (((!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ) # 
+// (!\datapath_inst|mux_2to1_RReg|d_out [2])))) # (!\datapath_inst|register_8bit_RMASK|dff_inst2|masterLatch|int_q~0_combout  & (!\GClock~input_o  & ((!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ) # 
+// (!\datapath_inst|mux_2to1_RReg|d_out [2]))))
+
+	.dataa(\datapath_inst|register_8bit_RMASK|dff_inst2|masterLatch|int_q~0_combout ),
+	.datab(\GClock~input_o ),
+	.datac(\datapath_inst|mux_2to1_RReg|d_out [2]),
+	.datad(\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst2|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst2|masterLatch|int_q~0 .lut_mask = 16'h0BBB;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst2|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N16
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst2|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst2|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|register_8bit_RMASK|dff_inst2|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// ((\datapath_inst|register_8bit_RMASK|dff_inst2|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|register_8bit_RMASK|dff_inst2|masterLatch|int_q~0_combout ),
+	.datab(\datapath_inst|register_8bit_RMASK|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datac(gnd),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst2|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst2|slaveLatch|int_q~0 .lut_mask = 16'hAACC;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst2|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N4
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// ((\datapath_inst|register_8bit_RMASK|dff_inst2|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0_combout ),
+	.datac(\datapath_inst|register_8bit_RMASK|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0 .lut_mask = 16'hCCF0;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N20
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N18
+cycloneive_lcell_comb \datapath_inst|mux_2to1_RReg|and2[1] (
+// Equation(s):
+// \datapath_inst|mux_2to1_RReg|and2 [1] = (!\datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0_combout  & ((!\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout )))
+
+	.dataa(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_RReg|and2 [1]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|and2[1] .lut_mask = 16'h005F;
+defparam \datapath_inst|mux_2to1_RReg|and2[1] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y36_N9
+dffeas \datapath_inst|mux_2to1_RReg|d_out[1] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\datapath_inst|mux_2to1_RReg|and2 [1]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_RReg|d_out [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|d_out[1] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_RReg|d_out[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N28
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst1|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst1|masterLatch|int_q~0_combout  = (\GClock~input_o  & (\datapath_inst|register_8bit_RMASK|dff_inst1|masterLatch|int_q~0_combout  & ((!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ) # 
+// (!\datapath_inst|mux_2to1_RReg|d_out [1])))) # (!\GClock~input_o  & (((!\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ) # (!\datapath_inst|mux_2to1_RReg|d_out [1]))))
+
+	.dataa(\GClock~input_o ),
+	.datab(\datapath_inst|register_8bit_RMASK|dff_inst1|masterLatch|int_q~0_combout ),
+	.datac(\datapath_inst|mux_2to1_RReg|d_out [1]),
+	.datad(\datapath_inst|register_8bit_RMASK|dff_inst7|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst1|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst1|masterLatch|int_q~0 .lut_mask = 16'h0DDD;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst1|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N20
+cycloneive_lcell_comb \datapath_inst|register_8bit_RMASK|dff_inst1|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_RMASK|dff_inst1|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_RMASK|dff_inst1|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_RMASK|dff_inst1|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_RMASK|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datac(\GClock~inputclkctrl_outclk ),
+	.datad(\datapath_inst|register_8bit_RMASK|dff_inst1|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_RMASK|dff_inst1|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_RMASK|dff_inst1|slaveLatch|int_q~0 .lut_mask = 16'hFC0C;
+defparam \datapath_inst|register_8bit_RMASK|dff_inst1|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N14
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_RMASK|dff_inst1|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_RMASK|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N18
+cycloneive_lcell_comb \datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y35_N16
+cycloneive_lcell_comb \datapath_inst|mux_2to1_RReg|temp_out[0] (
+// Equation(s):
+// \datapath_inst|mux_2to1_RReg|temp_out [0] = ((\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout  & \controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout )) # (!\datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0_combout )
+
+	.dataa(\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datab(\datapath_inst|rshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0_combout ),
+	.datac(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_RReg|temp_out [0]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|temp_out[0] .lut_mask = 16'hB3B3;
+defparam \datapath_inst|mux_2to1_RReg|temp_out[0] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X2_Y36_N17
+dffeas \datapath_inst|mux_2to1_RReg|d_out[0] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\datapath_inst|mux_2to1_RReg|temp_out [0]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_RReg|d_out [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_RReg|d_out[0] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_RReg|d_out[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N14
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst0|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst0|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|register_8bit_LMASK|dff_inst0|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (((!\controlLogic_inst|loadL~combout ) # (!\datapath_inst|mux_2to1_LReg|d_out [0]))))
+
+	.dataa(\GClock~inputclkctrl_outclk ),
+	.datab(\datapath_inst|register_8bit_LMASK|dff_inst0|masterLatch|int_q~0_combout ),
+	.datac(\datapath_inst|mux_2to1_LReg|d_out [0]),
+	.datad(\controlLogic_inst|loadL~combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst0|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst0|masterLatch|int_q~0 .lut_mask = 16'h8DDD;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst0|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N26
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst0|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst0|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_LMASK|dff_inst0|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_LMASK|dff_inst0|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|register_8bit_LMASK|dff_inst0|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|register_8bit_LMASK|dff_inst0|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst0|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst0|slaveLatch|int_q~0 .lut_mask = 16'hF0AA;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst0|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N4
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_LMASK|dff_inst0|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|register_8bit_LMASK|dff_inst0|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0 .lut_mask = 16'hF0AA;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N2
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N0
+cycloneive_lcell_comb \datapath_inst|mux_2to1_LReg|and2[1] (
+// Equation(s):
+// \datapath_inst|mux_2to1_LReg|and2 [1] = (!\datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0_combout  & ((!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datac(\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datad(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_LReg|and2 [1]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|and2[1] .lut_mask = 16'h0333;
+defparam \datapath_inst|mux_2to1_LReg|and2[1] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y36_N13
+dffeas \datapath_inst|mux_2to1_LReg|d_out[1] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\datapath_inst|mux_2to1_LReg|and2 [1]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_LReg|d_out [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|d_out[1] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_LReg|d_out[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N2
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst1|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst1|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (((\datapath_inst|register_8bit_LMASK|dff_inst1|masterLatch|int_q~0_combout )))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (((!\controlLogic_inst|loadL~combout )) # (!\datapath_inst|mux_2to1_LReg|d_out [1])))
+
+	.dataa(\datapath_inst|mux_2to1_LReg|d_out [1]),
+	.datab(\controlLogic_inst|loadL~combout ),
+	.datac(\datapath_inst|register_8bit_LMASK|dff_inst1|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst1|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst1|masterLatch|int_q~0 .lut_mask = 16'hF077;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst1|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y36_N20
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst1|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst1|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_LMASK|dff_inst1|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_LMASK|dff_inst1|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_LMASK|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|register_8bit_LMASK|dff_inst1|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst1|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst1|slaveLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst1|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y36_N22
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_LMASK|dff_inst1|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_LMASK|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y36_N14
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N14
+cycloneive_lcell_comb \datapath_inst|mux_2to1_LReg|and2[2] (
+// Equation(s):
+// \datapath_inst|mux_2to1_LReg|and2 [2] = (!\datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0_combout  & ((!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datac(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_LReg|and2 [2]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|and2[2] .lut_mask = 16'h003F;
+defparam \datapath_inst|mux_2to1_LReg|and2[2] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y36_N25
+dffeas \datapath_inst|mux_2to1_LReg|d_out[2] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\datapath_inst|mux_2to1_LReg|and2 [2]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_LReg|d_out [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|d_out[2] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_LReg|d_out[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N28
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst2|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst2|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|register_8bit_LMASK|dff_inst2|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (((!\datapath_inst|mux_2to1_LReg|d_out [2]) # (!\controlLogic_inst|loadL~combout ))))
+
+	.dataa(\datapath_inst|register_8bit_LMASK|dff_inst2|masterLatch|int_q~0_combout ),
+	.datab(\controlLogic_inst|loadL~combout ),
+	.datac(\datapath_inst|mux_2to1_LReg|d_out [2]),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst2|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst2|masterLatch|int_q~0 .lut_mask = 16'hAA3F;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst2|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y36_N10
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst2|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst2|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_LMASK|dff_inst2|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_LMASK|dff_inst2|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|register_8bit_LMASK|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|register_8bit_LMASK|dff_inst2|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst2|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst2|slaveLatch|int_q~0 .lut_mask = 16'hF0AA;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst2|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y36_N8
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_LMASK|dff_inst2|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|register_8bit_LMASK|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0 .lut_mask = 16'hF0AA;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y36_N16
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N0
+cycloneive_lcell_comb \datapath_inst|mux_2to1_LReg|and2[3] (
+// Equation(s):
+// \datapath_inst|mux_2to1_LReg|and2 [3] = (!\datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0_combout  & ((!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datac(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_LReg|and2 [3]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|and2[3] .lut_mask = 16'h003F;
+defparam \datapath_inst|mux_2to1_LReg|and2[3] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y36_N3
+dffeas \datapath_inst|mux_2to1_LReg|d_out[3] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\datapath_inst|mux_2to1_LReg|and2 [3]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_LReg|d_out [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|d_out[3] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_LReg|d_out[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N24
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst3|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst3|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|register_8bit_LMASK|dff_inst3|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (((!\datapath_inst|mux_2to1_LReg|d_out [3]) # (!\controlLogic_inst|loadL~combout ))))
+
+	.dataa(\datapath_inst|register_8bit_LMASK|dff_inst3|masterLatch|int_q~0_combout ),
+	.datab(\controlLogic_inst|loadL~combout ),
+	.datac(\datapath_inst|mux_2to1_LReg|d_out [3]),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst3|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst3|masterLatch|int_q~0 .lut_mask = 16'hAA3F;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst3|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y36_N24
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst3|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst3|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_LMASK|dff_inst3|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_LMASK|dff_inst3|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_LMASK|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|register_8bit_LMASK|dff_inst3|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst3|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst3|slaveLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst3|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y36_N30
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_LMASK|dff_inst3|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_LMASK|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N14
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// ((\datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|masterLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0 .lut_mask = 16'hAAF0;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N10
+cycloneive_lcell_comb \datapath_inst|mux_2to1_LReg|and2[4] (
+// Equation(s):
+// \datapath_inst|mux_2to1_LReg|and2 [4] = (!\datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0_combout  & ((!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst4|slaveLatch|int_q~0_combout ),
+	.datac(\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datad(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_LReg|and2 [4]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|and2[4] .lut_mask = 16'h0333;
+defparam \datapath_inst|mux_2to1_LReg|and2[4] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y36_N17
+dffeas \datapath_inst|mux_2to1_LReg|d_out[4] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\datapath_inst|mux_2to1_LReg|and2 [4]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_LReg|d_out [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|d_out[4] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_LReg|d_out[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N8
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst4|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst4|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|register_8bit_LMASK|dff_inst4|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (((!\controlLogic_inst|loadL~combout ) # (!\datapath_inst|mux_2to1_LReg|d_out [4]))))
+
+	.dataa(\datapath_inst|register_8bit_LMASK|dff_inst4|masterLatch|int_q~0_combout ),
+	.datab(\datapath_inst|mux_2to1_LReg|d_out [4]),
+	.datac(\GClock~inputclkctrl_outclk ),
+	.datad(\controlLogic_inst|loadL~combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst4|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst4|masterLatch|int_q~0 .lut_mask = 16'hA3AF;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst4|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N4
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst4|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst4|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_LMASK|dff_inst4|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_LMASK|dff_inst4|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_LMASK|dff_inst4|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|register_8bit_LMASK|dff_inst4|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst4|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst4|slaveLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst4|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y35_N0
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// ((\datapath_inst|register_8bit_LMASK|dff_inst4|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|register_8bit_LMASK|dff_inst4|slaveLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0 .lut_mask = 16'hAAF0;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N6
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0_combout ),
+	.datab(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|masterLatch|int_q~0_combout ),
+	.datac(gnd),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0 .lut_mask = 16'hCCAA;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N8
+cycloneive_lcell_comb \datapath_inst|mux_2to1_LReg|and2[5] (
+// Equation(s):
+// \datapath_inst|mux_2to1_LReg|and2 [5] = (!\datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0_combout  & ((!\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst5|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datad(\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_LReg|and2 [5]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|and2[5] .lut_mask = 16'h0555;
+defparam \datapath_inst|mux_2to1_LReg|and2[5] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X3_Y36_N21
+dffeas \datapath_inst|mux_2to1_LReg|d_out[5] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\datapath_inst|mux_2to1_LReg|and2 [5]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_LReg|d_out [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|d_out[5] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_LReg|d_out[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N26
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst5|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst5|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (((\datapath_inst|register_8bit_LMASK|dff_inst5|masterLatch|int_q~0_combout )))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (((!\controlLogic_inst|loadL~combout )) # (!\datapath_inst|mux_2to1_LReg|d_out [5])))
+
+	.dataa(\GClock~inputclkctrl_outclk ),
+	.datab(\datapath_inst|mux_2to1_LReg|d_out [5]),
+	.datac(\datapath_inst|register_8bit_LMASK|dff_inst5|masterLatch|int_q~0_combout ),
+	.datad(\controlLogic_inst|loadL~combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst5|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst5|masterLatch|int_q~0 .lut_mask = 16'hB1F5;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst5|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N14
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst5|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst5|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_LMASK|dff_inst5|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_LMASK|dff_inst5|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_LMASK|dff_inst5|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|register_8bit_LMASK|dff_inst5|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst5|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst5|slaveLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst5|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N26
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_LMASK|dff_inst5|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_LMASK|dff_inst5|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N24
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N12
+cycloneive_lcell_comb \datapath_inst|mux_2to1_LReg|and2[6] (
+// Equation(s):
+// \datapath_inst|mux_2to1_LReg|and2 [6] = (!\datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0_combout  & ((!\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst6|slaveLatch|int_q~0_combout ),
+	.datac(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datad(\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_LReg|and2 [6]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|and2[6] .lut_mask = 16'h0333;
+defparam \datapath_inst|mux_2to1_LReg|and2[6] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X3_Y36_N9
+dffeas \datapath_inst|mux_2to1_LReg|d_out[6] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\datapath_inst|mux_2to1_LReg|and2 [6]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_LReg|d_out [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|d_out[6] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_LReg|d_out[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N6
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst6|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst6|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|register_8bit_LMASK|dff_inst6|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (((!\datapath_inst|mux_2to1_LReg|d_out [6]) # (!\controlLogic_inst|loadL~combout ))))
+
+	.dataa(\datapath_inst|register_8bit_LMASK|dff_inst6|masterLatch|int_q~0_combout ),
+	.datab(\controlLogic_inst|loadL~combout ),
+	.datac(\datapath_inst|mux_2to1_LReg|d_out [6]),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst6|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst6|masterLatch|int_q~0 .lut_mask = 16'hAA3F;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst6|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y35_N0
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst6|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst6|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_LMASK|dff_inst6|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_LMASK|dff_inst6|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_LMASK|dff_inst6|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|register_8bit_LMASK|dff_inst6|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst6|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst6|slaveLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst6|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y35_N24
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_LMASK|dff_inst6|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_LMASK|dff_inst6|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0 .lut_mask = 16'hF0CC;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y35_N22
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// ((\datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|masterLatch|int_q~0_combout ),
+	.datac(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0 .lut_mask = 16'hCCF0;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N16
+cycloneive_lcell_comb \datapath_inst|mux_2to1_LReg|temp_out[7] (
+// Equation(s):
+// \datapath_inst|mux_2to1_LReg|temp_out [7] = ((\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout  & \controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout )) # (!\datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0_combout )
+
+	.dataa(\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst7|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_LReg|temp_out [7]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|temp_out[7] .lut_mask = 16'hA0FF;
+defparam \datapath_inst|mux_2to1_LReg|temp_out[7] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X4_Y36_N17
+dffeas \datapath_inst|mux_2to1_LReg|d_out[7] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(\datapath_inst|mux_2to1_LReg|temp_out [7]),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_LReg|d_out [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|d_out[7] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_LReg|d_out[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X2_Y36_N4
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst7|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst7|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|register_8bit_LMASK|dff_inst7|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (((!\datapath_inst|mux_2to1_LReg|d_out [7]) # (!\controlLogic_inst|loadL~combout ))))
+
+	.dataa(\datapath_inst|register_8bit_LMASK|dff_inst7|masterLatch|int_q~0_combout ),
+	.datab(\controlLogic_inst|loadL~combout ),
+	.datac(\datapath_inst|mux_2to1_LReg|d_out [7]),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst7|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst7|masterLatch|int_q~0 .lut_mask = 16'hAA3F;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst7|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N10
+cycloneive_lcell_comb \datapath_inst|register_8bit_LMASK|dff_inst7|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_LMASK|dff_inst7|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_LMASK|dff_inst7|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_LMASK|dff_inst7|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|register_8bit_LMASK|dff_inst7|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|register_8bit_LMASK|dff_inst7|masterLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_LMASK|dff_inst7|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_LMASK|dff_inst7|slaveLatch|int_q~0 .lut_mask = 16'hF0AA;
+defparam \datapath_inst|register_8bit_LMASK|dff_inst7|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N2
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_LMASK|dff_inst7|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|register_8bit_LMASK|dff_inst7|slaveLatch|int_q~0_combout ),
+	.datab(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0_combout ),
+	.datac(gnd),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0 .lut_mask = 16'hCCAA;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N8
+cycloneive_lcell_comb \datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// ((\datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|masterLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0_combout ),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0 .lut_mask = 16'hAAF0;
+defparam \datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N16
+cycloneive_lcell_comb \datapath_inst|mux_2to1_LReg|and2[0] (
+// Equation(s):
+// \datapath_inst|mux_2to1_LReg|and2 [0] = (!\datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0_combout  & ((!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ) # (!\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|lshift_8bit_0|dff_inst|dff_inst0|slaveLatch|int_q~0_combout ),
+	.datac(\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datad(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|mux_2to1_LReg|and2 [0]),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|and2[0] .lut_mask = 16'h0333;
+defparam \datapath_inst|mux_2to1_LReg|and2[0] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y36_N15
+dffeas \datapath_inst|mux_2to1_LReg|d_out[0] (
+	.clk(\GClock~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\datapath_inst|mux_2to1_LReg|and2 [0]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\datapath_inst|mux_2to1_LReg|d_out [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \datapath_inst|mux_2to1_LReg|d_out[0] .is_wysiwyg = "true";
+defparam \datapath_inst|mux_2to1_LReg|d_out[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N28
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout  = (\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout  & (!\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout  & (\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout  & 
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~0_combout )))
+
+	.dataa(\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datab(\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datac(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1 .lut_mask = 16'h2000;
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N4
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~3 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~3_combout  = (\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout  & ((\datapath_inst|mux_2to1_LReg|d_out [0]) # ((\datapath_inst|mux_2to1_RReg|d_out [0] & 
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout )))) # (!\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout  & (\datapath_inst|mux_2to1_RReg|d_out [0] & 
+// ((\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ))))
+
+	.dataa(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout ),
+	.datab(\datapath_inst|mux_2to1_RReg|d_out [0]),
+	.datac(\datapath_inst|mux_2to1_LReg|d_out [0]),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~3 .lut_mask = 16'hECA0;
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N30
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout  = (\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~0_combout  & (((!\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout  & 
+// !\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout )) # (!\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout )))
+
+	.dataa(\controlLogic_inst|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datab(\controlLogic_inst|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datac(\controlLogic_inst|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4 .lut_mask = 16'h1F00;
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N8
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~5 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~5_combout  = (\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout  & ((!\datapath_inst|register_8bit_LMASK|dff_inst0|slaveLatch|int_q~0_combout ) # 
+// (!\datapath_inst|register_8bit_RMASK|dff_inst0|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout ),
+	.datab(\datapath_inst|register_8bit_RMASK|dff_inst0|slaveLatch|int_q~0_combout ),
+	.datac(gnd),
+	.datad(\datapath_inst|register_8bit_LMASK|dff_inst0|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~5_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~5 .lut_mask = 16'h22AA;
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~5 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N22
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~6 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~6_combout  = (!\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~3_combout  & (!\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~5_combout  & 
+// ((\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~6_combout ) # (!\GClock~input_o ))))
+
+	.dataa(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~6_combout ),
+	.datab(\GClock~input_o ),
+	.datac(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~3_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~5_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~6_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~6 .lut_mask = 16'h000B;
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~6 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N20
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst0|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst0|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & (\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~6_combout )) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// ((\datapath_inst|register_8bit_Disp|dff_inst0|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~6_combout ),
+	.datab(\datapath_inst|register_8bit_Disp|dff_inst0|slaveLatch|int_q~0_combout ),
+	.datac(gnd),
+	.datad(\GClock~inputclkctrl_outclk ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst0|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|slaveLatch|int_q~0 .lut_mask = 16'hAACC;
+defparam \datapath_inst|register_8bit_Disp|dff_inst0|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N12
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~0_combout  = (\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout  & ((\datapath_inst|mux_2to1_LReg|d_out [1]) # ((\datapath_inst|mux_2to1_RReg|d_out [1] & 
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout )))) # (!\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout  & (\datapath_inst|mux_2to1_RReg|d_out [1] & 
+// ((\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ))))
+
+	.dataa(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout ),
+	.datab(\datapath_inst|mux_2to1_RReg|d_out [1]),
+	.datac(\datapath_inst|mux_2to1_LReg|d_out [1]),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~0 .lut_mask = 16'hECA0;
+defparam \datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N24
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~1 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~1_combout  = (\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout  & ((!\datapath_inst|register_8bit_RMASK|dff_inst1|slaveLatch|int_q~0_combout ) # 
+// (!\datapath_inst|register_8bit_LMASK|dff_inst1|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|register_8bit_LMASK|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|register_8bit_RMASK|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~1 .lut_mask = 16'h5F00;
+defparam \datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N18
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~2 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~2_combout  = (!\datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~0_combout  & (!\datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~1_combout  & 
+// ((\datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~2_combout ) # (!\GClock~input_o ))))
+
+	.dataa(\datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~2_combout ),
+	.datab(\GClock~input_o ),
+	.datac(\datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~0_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~1_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~2 .lut_mask = 16'h000B;
+defparam \datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N12
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst1|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst1|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~2_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_Disp|dff_inst1|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|register_8bit_Disp|dff_inst1|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\GClock~inputclkctrl_outclk ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst1|masterLatch|int_q~2_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst1|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst1|slaveLatch|int_q~0 .lut_mask = 16'hFA0A;
+defparam \datapath_inst|register_8bit_Disp|dff_inst1|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N6
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~0_combout  = (\datapath_inst|mux_2to1_LReg|d_out [2] & ((\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout ) # ((\datapath_inst|mux_2to1_RReg|d_out [2] & 
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout )))) # (!\datapath_inst|mux_2to1_LReg|d_out [2] & (((\datapath_inst|mux_2to1_RReg|d_out [2] & \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ))))
+
+	.dataa(\datapath_inst|mux_2to1_LReg|d_out [2]),
+	.datab(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout ),
+	.datac(\datapath_inst|mux_2to1_RReg|d_out [2]),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~0 .lut_mask = 16'hF888;
+defparam \datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N2
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~1 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~1_combout  = (\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout  & ((!\datapath_inst|register_8bit_RMASK|dff_inst2|slaveLatch|int_q~0_combout ) # 
+// (!\datapath_inst|register_8bit_LMASK|dff_inst2|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|register_8bit_LMASK|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|register_8bit_RMASK|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~1 .lut_mask = 16'h5F00;
+defparam \datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N12
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~2 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~2_combout  = (!\datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~0_combout  & (!\datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~1_combout  & 
+// ((\datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~2_combout ) # (!\GClock~input_o ))))
+
+	.dataa(\datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~2_combout ),
+	.datab(\GClock~input_o ),
+	.datac(\datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~0_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~1_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~2 .lut_mask = 16'h000B;
+defparam \datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N8
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst2|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst2|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~2_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_Disp|dff_inst2|slaveLatch|int_q~0_combout ))
+
+	.dataa(\GClock~inputclkctrl_outclk ),
+	.datab(\datapath_inst|register_8bit_Disp|dff_inst2|slaveLatch|int_q~0_combout ),
+	.datac(gnd),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst2|masterLatch|int_q~2_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst2|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst2|slaveLatch|int_q~0 .lut_mask = 16'hEE44;
+defparam \datapath_inst|register_8bit_Disp|dff_inst2|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N0
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~0_combout  = (\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout  & ((\datapath_inst|mux_2to1_LReg|d_out [3]) # ((\datapath_inst|mux_2to1_RReg|d_out [3] & 
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout )))) # (!\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout  & (((\datapath_inst|mux_2to1_RReg|d_out [3] & 
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ))))
+
+	.dataa(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout ),
+	.datab(\datapath_inst|mux_2to1_LReg|d_out [3]),
+	.datac(\datapath_inst|mux_2to1_RReg|d_out [3]),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~0 .lut_mask = 16'hF888;
+defparam \datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N20
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~1 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~1_combout  = (\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout  & ((!\datapath_inst|register_8bit_RMASK|dff_inst3|slaveLatch|int_q~0_combout ) # 
+// (!\datapath_inst|register_8bit_LMASK|dff_inst3|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_LMASK|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|register_8bit_RMASK|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~1 .lut_mask = 16'h3F00;
+defparam \datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N6
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~2 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~2_combout  = (!\datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~0_combout  & (!\datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~1_combout  & 
+// ((\datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~2_combout ) # (!\GClock~input_o ))))
+
+	.dataa(\datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~2_combout ),
+	.datab(\GClock~input_o ),
+	.datac(\datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~0_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~1_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~2 .lut_mask = 16'h000B;
+defparam \datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y36_N30
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst3|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst3|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~2_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_Disp|dff_inst3|slaveLatch|int_q~0_combout ))
+
+	.dataa(\datapath_inst|register_8bit_Disp|dff_inst3|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\GClock~inputclkctrl_outclk ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst3|masterLatch|int_q~2_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst3|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst3|slaveLatch|int_q~0 .lut_mask = 16'hFA0A;
+defparam \datapath_inst|register_8bit_Disp|dff_inst3|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N14
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~1 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~1_combout  = (\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout  & ((!\datapath_inst|register_8bit_RMASK|dff_inst4|slaveLatch|int_q~0_combout ) # 
+// (!\datapath_inst|register_8bit_LMASK|dff_inst4|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_LMASK|dff_inst4|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout ),
+	.datad(\datapath_inst|register_8bit_RMASK|dff_inst4|slaveLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~1 .lut_mask = 16'h30F0;
+defparam \datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y36_N16
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~0_combout  = (\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout  & ((\datapath_inst|mux_2to1_LReg|d_out [4]) # ((\datapath_inst|mux_2to1_RReg|d_out [4] & 
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout )))) # (!\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout  & (\datapath_inst|mux_2to1_RReg|d_out [4] & 
+// ((\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ))))
+
+	.dataa(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout ),
+	.datab(\datapath_inst|mux_2to1_RReg|d_out [4]),
+	.datac(\datapath_inst|mux_2to1_LReg|d_out [4]),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~0 .lut_mask = 16'hECA0;
+defparam \datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N20
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~2 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~2_combout  = (!\datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~1_combout  & (!\datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~0_combout  & 
+// ((\datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~2_combout ) # (!\GClock~input_o ))))
+
+	.dataa(\GClock~input_o ),
+	.datab(\datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~2_combout ),
+	.datac(\datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~1_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~2 .lut_mask = 16'h000D;
+defparam \datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y35_N16
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst4|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst4|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~2_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_Disp|dff_inst4|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_Disp|dff_inst4|slaveLatch|int_q~0_combout ),
+	.datac(\GClock~inputclkctrl_outclk ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst4|masterLatch|int_q~2_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst4|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst4|slaveLatch|int_q~0 .lut_mask = 16'hFC0C;
+defparam \datapath_inst|register_8bit_Disp|dff_inst4|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N4
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~0_combout  = (\datapath_inst|mux_2to1_RReg|d_out [5] & ((\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ) # ((\datapath_inst|mux_2to1_LReg|d_out [5] & 
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout )))) # (!\datapath_inst|mux_2to1_RReg|d_out [5] & (\datapath_inst|mux_2to1_LReg|d_out [5] & ((\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout ))))
+
+	.dataa(\datapath_inst|mux_2to1_RReg|d_out [5]),
+	.datab(\datapath_inst|mux_2to1_LReg|d_out [5]),
+	.datac(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~0 .lut_mask = 16'hECA0;
+defparam \datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N10
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~1 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~1_combout  = (\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout  & ((!\datapath_inst|register_8bit_LMASK|dff_inst5|slaveLatch|int_q~0_combout ) # 
+// (!\datapath_inst|register_8bit_RMASK|dff_inst5|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_RMASK|dff_inst5|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|register_8bit_LMASK|dff_inst5|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~1 .lut_mask = 16'h3F00;
+defparam \datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N24
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~2 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~2_combout  = (!\datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~0_combout  & (!\datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~1_combout  & 
+// ((\datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~2_combout ) # (!\GClock~input_o ))))
+
+	.dataa(\datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~2_combout ),
+	.datab(\GClock~input_o ),
+	.datac(\datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~0_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~1_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~2 .lut_mask = 16'h000B;
+defparam \datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N18
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst5|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst5|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~2_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_Disp|dff_inst5|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_Disp|dff_inst5|slaveLatch|int_q~0_combout ),
+	.datac(\GClock~inputclkctrl_outclk ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst5|masterLatch|int_q~2_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst5|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst5|slaveLatch|int_q~0 .lut_mask = 16'hFC0C;
+defparam \datapath_inst|register_8bit_Disp|dff_inst5|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N14
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~1 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~1_combout  = (\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout  & ((!\datapath_inst|register_8bit_RMASK|dff_inst6|slaveLatch|int_q~0_combout ) # 
+// (!\datapath_inst|register_8bit_LMASK|dff_inst6|slaveLatch|int_q~0_combout )))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_LMASK|dff_inst6|slaveLatch|int_q~0_combout ),
+	.datac(\datapath_inst|register_8bit_RMASK|dff_inst6|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~1 .lut_mask = 16'h3F00;
+defparam \datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N0
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~0_combout  = (\datapath_inst|mux_2to1_RReg|d_out [6] & ((\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ) # ((\datapath_inst|mux_2to1_LReg|d_out [6] & 
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout )))) # (!\datapath_inst|mux_2to1_RReg|d_out [6] & (\datapath_inst|mux_2to1_LReg|d_out [6] & ((\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout ))))
+
+	.dataa(\datapath_inst|mux_2to1_RReg|d_out [6]),
+	.datab(\datapath_inst|mux_2to1_LReg|d_out [6]),
+	.datac(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~0 .lut_mask = 16'hECA0;
+defparam \datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N28
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~2 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~2_combout  = (!\datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~1_combout  & (!\datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~0_combout  & 
+// ((\datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~2_combout ) # (!\GClock~input_o ))))
+
+	.dataa(\datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~2_combout ),
+	.datab(\GClock~input_o ),
+	.datac(\datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~1_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~0_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~2 .lut_mask = 16'h000B;
+defparam \datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y36_N20
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst6|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst6|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~2_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_Disp|dff_inst6|slaveLatch|int_q~0_combout ))
+
+	.dataa(\GClock~inputclkctrl_outclk ),
+	.datab(\datapath_inst|register_8bit_Disp|dff_inst6|slaveLatch|int_q~0_combout ),
+	.datac(gnd),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst6|masterLatch|int_q~2_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst6|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst6|slaveLatch|int_q~0 .lut_mask = 16'hEE44;
+defparam \datapath_inst|register_8bit_Disp|dff_inst6|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N22
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~0_combout  = (\datapath_inst|mux_2to1_RReg|d_out [7] & ((\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ) # ((\datapath_inst|mux_2to1_LReg|d_out [7] & 
+// \datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout )))) # (!\datapath_inst|mux_2to1_RReg|d_out [7] & (\datapath_inst|mux_2to1_LReg|d_out [7] & (\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout )))
+
+	.dataa(\datapath_inst|mux_2to1_RReg|d_out [7]),
+	.datab(\datapath_inst|mux_2to1_LReg|d_out [7]),
+	.datac(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~2_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~1_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~0 .lut_mask = 16'hEAC0;
+defparam \datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N28
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~1 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~1_combout  = (\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout  & ((!\datapath_inst|register_8bit_RMASK|dff_inst7|slaveLatch|int_q~0_combout ) # 
+// (!\datapath_inst|register_8bit_LMASK|dff_inst7|slaveLatch|int_q~0_combout )))
+
+	.dataa(\datapath_inst|register_8bit_LMASK|dff_inst7|slaveLatch|int_q~0_combout ),
+	.datab(gnd),
+	.datac(\datapath_inst|register_8bit_RMASK|dff_inst7|slaveLatch|int_q~0_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst0|masterLatch|int_q~4_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~1 .lut_mask = 16'h5F00;
+defparam \datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N18
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~2 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~2_combout  = (!\datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~0_combout  & (!\datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~1_combout  & 
+// ((\datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~2_combout ) # (!\GClock~input_o ))))
+
+	.dataa(\datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~2_combout ),
+	.datab(\GClock~input_o ),
+	.datac(\datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~0_combout ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~1_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~2 .lut_mask = 16'h000B;
+defparam \datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y36_N0
+cycloneive_lcell_comb \datapath_inst|register_8bit_Disp|dff_inst7|slaveLatch|int_q~0 (
+// Equation(s):
+// \datapath_inst|register_8bit_Disp|dff_inst7|slaveLatch|int_q~0_combout  = (GLOBAL(\GClock~inputclkctrl_outclk ) & ((\datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~2_combout ))) # (!GLOBAL(\GClock~inputclkctrl_outclk ) & 
+// (\datapath_inst|register_8bit_Disp|dff_inst7|slaveLatch|int_q~0_combout ))
+
+	.dataa(gnd),
+	.datab(\datapath_inst|register_8bit_Disp|dff_inst7|slaveLatch|int_q~0_combout ),
+	.datac(\GClock~inputclkctrl_outclk ),
+	.datad(\datapath_inst|register_8bit_Disp|dff_inst7|masterLatch|int_q~2_combout ),
+	.cin(gnd),
+	.combout(\datapath_inst|register_8bit_Disp|dff_inst7|slaveLatch|int_q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \datapath_inst|register_8bit_Disp|dff_inst7|slaveLatch|int_q~0 .lut_mask = 16'hFC0C;
+defparam \datapath_inst|register_8bit_Disp|dff_inst7|slaveLatch|int_q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+assign DisplayOut[0] = \DisplayOut[0]~output_o ;
+
+assign DisplayOut[1] = \DisplayOut[1]~output_o ;
+
+assign DisplayOut[2] = \DisplayOut[2]~output_o ;
+
+assign DisplayOut[3] = \DisplayOut[3]~output_o ;
+
+assign DisplayOut[4] = \DisplayOut[4]~output_o ;
+
+assign DisplayOut[5] = \DisplayOut[5]~output_o ;
+
+assign DisplayOut[6] = \DisplayOut[6]~output_o ;
+
+assign DisplayOut[7] = \DisplayOut[7]~output_o ;
+
+endmodule

@@ -1,0 +1,9 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY topLevel IS
+	PORT (
+			RightInput, LeftInput, GClock, GReset : IN STD_LOGIC;
+			DisplayOut : OUT STD_LOGIC_VECTOR(7 downto 0);
+	);
+	
